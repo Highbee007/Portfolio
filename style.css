@@ -12,6 +12,7 @@ body {
   padding: 5rem;
   background-color: #121212;
   color: #e0e0e0;
+  /* transition: ease-in 1.5s; */
 }
 
 body a {
@@ -90,6 +91,22 @@ em {
 
 nav ul a {
   color: #b0b0b0;
+  width: fit-content;
+}
+
+nav ul a:hover, .project div:hover {
+  color: #ffffff;
+  transform: scale(2.1);
+  transition: ease-out 600ms;
+}
+
+#home svg {
+  width: 3rem;
+}
+
+#home svg:hover, #contact button:hover {
+  transform: scale(1.5);
+  transition: ease-out 100ms;
 }
 
 #about {
@@ -130,12 +147,18 @@ nav ul a {
   width: 100%;
 }
 
-.project img {
-  max-width: 10rem;
+.project div {
+  max-width: 15rem;
   width: 105%;
-  height: fit-content;
   margin: 20px;
+  overflow: hidden;
+  height: fit-content;
+}
+
+.project div img {
   border: 1px solid #b0b0b0;
+  width: 100%;
+  height: inherit;
 }
 
 .project p{
@@ -145,4 +168,25 @@ nav ul a {
   line-height: 1.5rem;
   font-size: 1rem;
   color: #b0b0b0c8;
+}
+
+#contact {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+#contact p {
+  color: #b0b0b0;
+  width: 25rem;
+  margin: 0 auto;
+  line-height: 2rem;
+}
+
+#contact button {
+  margin: 1rem;
+  width: 7rem;
+  height: 3rem;
+  border: 2px solid #62f9d5;
+  color: #4ecca3;
+  background-color: transparent;
 }
