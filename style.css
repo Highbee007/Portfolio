@@ -37,14 +37,14 @@ header {
   margin-bottom: 1rem;
 }
 
-nav ul {
+header nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   display: block;
 }
 
-nav ul a {
+header nav ul a {
   cursor: pointer;
   text-decoration: none;
   color: #000;
@@ -89,24 +89,38 @@ em {
   color: #62f9d5;
 }
 
-nav ul a {
+#home nav ul {
+  list-style-type: none;
+  font-size: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+#home nav ul a {
   color: #b0b0b0;
   width: fit-content;
 }
 
-nav ul a:hover, .project div:hover {
+#home nav ul a:hover {
   color: #ffffff;
-  transform: scale(2.1);
-  transition: ease-out 600ms;
+  transition: ease-out 300ms;
+  transform: skew(10deg);
+}
+
+.project div:hover {
+  transform: scale(1.2);
+  transition: ease-out 300ms;
 }
 
 #home svg {
-  width: 3rem;
+  width: 2.5rem;
+  height: fit-content;
 }
 
-#home svg:hover, #contact button:hover {
+#home svg:hover,
+#contact button:hover {
   transform: scale(1.5);
-  transition: ease-out 100ms;
+  transition: ease-in-out 100ms;
 }
 
 #about {
@@ -149,7 +163,7 @@ nav ul a:hover, .project div:hover {
 
 .project div {
   max-width: 15rem;
-  width: 105%;
+  width: 100%;
   margin: 20px;
   overflow: hidden;
   height: fit-content;
@@ -161,7 +175,7 @@ nav ul a:hover, .project div:hover {
   height: inherit;
 }
 
-.project p{
+.project p {
   vertical-align: text-top;
   max-width: 23rem;
   width: 90%;
@@ -189,4 +203,58 @@ nav ul a:hover, .project div:hover {
   border: 2px solid #62f9d5;
   color: #4ecca3;
   background-color: transparent;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    padding: 2rem;
+  }
+
+  section {
+    display: block;
+    width: 100%;
+    margin: 0;
+    position: relative;
+  }
+
+  #home {
+    position: relative;
+    width: 100%;
+    margin-bottom: 4rem;
+  }
+
+  #home h1,
+  #home h2 {
+    font-size: 2rem;
+    font-family: Quicksand Medium;
+    line-height: 1.5rem;
+  }
+
+  #home nav {
+    display: none;
+  }
+
+  .project {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 5px;
+    width: 100%;
+  }
+
+  .project div,
+  .project p {
+    vertical-align: text-top;
+    width: 100%;
+    max-width: 90%;
+    line-height: 1.5rem;
+    text-align: left;
+    font-size: 1rem;
+    color: #b0b0b0c8;
+  }
+
+  .project div:hover {
+    transform: none;
+    transition: ease-out 300ms;
+  }
 }
