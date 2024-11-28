@@ -1,3 +1,64 @@
+/* Base styles */
+#home nav a {
+    transition: all 0.3s ease;
+}
+
+#home nav a.active {
+    color: #64ffda;
+    font-weight: bold;
+    transform: scale(1.1);
+}
+html {
+    scroll-behavior: smooth;
+}
+
+/* Scroll-based animations */
+section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Individual section animations */
+#home.visible {
+    transition-delay: 0.2s;
+}
+
+#about.visible {
+    transition-delay: 0.4s;
+}
+
+#projects.visible {
+    transition-delay: 0.6s;
+}
+
+#contact.visible {
+    transition-delay: 0.8s;
+}
+
+/* Project items animation */
+.project {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.project {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.project.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
 html {
   height: 100%;
   width: 100%;
@@ -12,7 +73,7 @@ body {
   padding: 5rem;
   background-color: #121212;
   color: #e0e0e0;
-  /* transition: ease-in 1.5s; */
+  transition: cubic-bezier(0.95, 0.05, 0.795, 0.035);
 }
 
 body a {
@@ -102,12 +163,6 @@ em {
   margin-bottom: 1rem;
 }
 
-#home nav ul a:hover {
-  color: #ffffff;
-  transition: ease-out 300ms;
-  transform: skew(10deg);
-}
-
 .project div:hover {
   transform: scale(1.2);
   transition: ease-out 300ms;
@@ -120,8 +175,19 @@ em {
 
 #home svg:hover,
 #contact button:hover {
-  transform: scale(1.5);
-  transition: ease-in-out 100ms;
+  transform: scale(1.2);
+  transition: all 0.2s easeout;
+  
+}
+
+#home nav a {
+  transition: all 0.3s ease;
+}
+
+#home nav a.active, #home nav ul a:hover {
+  color: #64ffda;
+  font-weight: bold;
+  transform: scale(1.1);
 }
 
 #about {
